@@ -15,7 +15,51 @@
   --muted:#806b5b;
   --accent:#9a7357;
   --accent2:#c4a88f;
-  --line:#cdb39d;
+  --line:#cdb39d
+}
+
+.turnstile-gate{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:var(--bg)
+}
+
+.turnstile-card{
+  width:min(420px,100%);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:32px;
+  text-align:center;
+  box-shadow:0 18px 60px #0002
+}
+
+.turnstile-card h2{
+  font-size:32px;
+  margin:8px 0
+}
+
+.turnstile-card p{
+  color:var(--muted);
+  font:14px Arial,sans-serif;
+  line-height:1.5
+}
+
+.turnstile-card .cf-turnstile{
+  display:flex;
+  justify-content:center;
+  margin:22px 0
+}
+
+.turnstile-status{
+  min-height:20px;
+  color:var(--accent);
+  font:13px Arial,sans-serif
 }
 
 body.dark{
@@ -27,140 +71,52 @@ body.dark{
   --muted:#c6ad99;
   --accent:#c49a78;
   --accent2:#8f6e58;
-  --line:#5d4739;
+  --line:#5d4739
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:"Trebuchet MS",Arial,sans-serif;
-  letter-spacing:.1px;
-  overflow-x:hidden;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  background:
-    radial-gradient(circle at 10% 20%,rgba(255,255,255,.25),transparent 20%),
-    radial-gradient(circle at 90% 40%,rgba(255,255,255,.18),transparent 20%),
-    radial-gradient(circle at 50% 90%,rgba(255,255,255,.15),transparent 25%);
-  animation:dreamyGlow 10s ease-in-out infinite alternate;
-}
-
-@keyframes dreamyGlow{
-  from{opacity:.55;transform:scale(1)}
-  to{opacity:1;transform:scale(1.06)}
+  letter-spacing:.1px
 }
 
 h1,h2,h3,.brand{
   font-family:Georgia,"Times New Roman",serif;
   font-weight:600;
-  letter-spacing:.2px;
-}
-
-button,
-a{
-  -webkit-tap-highlight-color:transparent;
-}
-
-button{
-  font-family:inherit;
-}
-
-.turnstile-gate{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-  background:var(--bg);
-}
-
-.turnstile-card{
-  width:min(420px,100%);
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:32px;
-  text-align:center;
-  box-shadow:0 18px 60px #0002;
-}
-
-.turnstile-card h2{
-  font-size:32px;
-  margin:8px 0;
-}
-
-.turnstile-card p{
-  color:var(--muted);
-  font:14px Arial,sans-serif;
-  line-height:1.5;
-}
-
-.turnstile-card .cf-turnstile{
-  display:flex;
-  justify-content:center;
-  margin:22px 0;
-}
-
-.turnstile-status{
-  min-height:20px;
-  color:var(--accent);
-  font:13px Arial,sans-serif;
-}
-
-.app{
-  position:relative;
-  z-index:1;
+  letter-spacing:.2px
 }
 
 nav{
   position:sticky;
   top:0;
-  z-index:100;
-  background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(16px);
+  z-index:10;
+  background:var(--bg);
+  backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:16px 6vw;
+  padding:16px 6vw
 }
 
 .brand{
   font-size:24px;
-  font-weight:700;
+  font-weight:700
 }
 
-.brand span{
-  color:var(--accent);
-}
+.brand span{color:var(--accent)}
 
 nav a{
   color:var(--text);
   text-decoration:none;
   margin-left:18px;
-  font:600 13px Arial,sans-serif;
-  transition:.2s;
-}
-
-nav a:hover{
-  color:var(--accent);
+  font:600 13px Arial,sans-serif
 }
 
 .theme-toggle{
@@ -171,44 +127,33 @@ nav a:hover{
   padding:7px 11px;
   margin-left:14px;
   cursor:pointer;
-  font:600 12px Arial,sans-serif;
-  transition:.2s;
-}
-
-.theme-toggle:hover{
-  transform:translateY(-2px);
+  font:600 12px Arial,sans-serif
 }
 
 .balance{
   display:inline-block;
   margin-left:14px;
   color:var(--text);
-  font:bold 13px Arial,sans-serif;
+  font:bold 13px Arial,sans-serif
 }
 
 .hero{
   padding:82px 7vw 68px;
   text-align:center;
-  background:radial-gradient(circle at 50% 20%,var(--soft),transparent 48%);
+  background:radial-gradient(circle at 50% 20%,var(--soft),transparent 48%)
 }
 
 .eyebrow{
   font:700 12px Arial,sans-serif;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:var(--accent);
+  color:var(--accent)
 }
 
 h1{
   font-size:clamp(48px,9vw,90px);
   margin:12px 0 8px;
-  line-height:.95;
-  animation:titleFloat 4s ease-in-out infinite;
-}
-
-@keyframes titleFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-5px)}
+  line-height:.95
 }
 
 .hero p{
@@ -216,7 +161,7 @@ h1{
   margin:18px auto;
   color:var(--muted);
   font-size:18px;
-  line-height:1.6;
+  line-height:1.6
 }
 
 .cta{
@@ -228,32 +173,26 @@ h1{
   padding:13px 22px;
   text-decoration:none;
   font:bold 14px Arial,sans-serif;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.cta:hover{
-  transform:translateY(-3px) scale(1.02);
-  box-shadow:0 8px 20px #0002;
+  cursor:pointer
 }
 
 .section{
-  padding:62px 7vw;
+  padding:62px 7vw
 }
 
 .section-head{
   text-align:center;
-  margin-bottom:28px;
+  margin-bottom:28px
 }
 
 .section-head h2{
   font-size:34px;
-  margin:5px;
+  margin:5px
 }
 
 .section-head p{
   color:var(--muted);
-  font:15px Arial,sans-serif;
+  font:15px Arial,sans-serif
 }
 
 .filters{
@@ -261,7 +200,7 @@ h1{
   gap:8px;
   flex-wrap:wrap;
   justify-content:center;
-  margin:0 auto 28px;
+  margin:0 auto 28px
 }
 
 .filter{
@@ -270,32 +209,27 @@ h1{
   color:var(--text);
   padding:9px 15px;
   border-radius:999px;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.filter:hover{
-  transform:translateY(-2px);
+  cursor:pointer
 }
 
 .filter.active{
   background:var(--accent);
   color:#fff;
-  border-color:var(--accent);
+  border-color:var(--accent)
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:16px;
+  gap:16px
 }
 
 .menu-category{
-  margin:0 0 38px;
+  margin:0 0 38px
 }
 
 .menu-category:last-child{
-  margin-bottom:0;
+  margin-bottom:0
 }
 
 .card{
@@ -304,45 +238,28 @@ h1{
   border-radius:22px;
   padding:20px;
   box-shadow:0 8px 25px rgba(0,0,0,.10);
-  transition:.25s;
-  animation:cardAppear .4s ease both;
+  transition:.2s
 }
 
-.card:hover{
-  transform:translateY(-6px) rotate(.3deg);
-  box-shadow:0 14px 30px rgba(0,0,0,.14);
-}
+.card:hover{transform:translateY(-3px)}
 
-@keyframes cardAppear{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.emoji{
-  font-size:34px;
-}
+.emoji{font-size:34px}
 
 .card h3{
   margin:10px 0 6px;
-  font-size:19px;
+  font-size:19px
 }
 
 .card p{
   color:var(--muted);
   font:13px Arial,sans-serif;
   line-height:1.45;
-  min-height:38px;
+  min-height:38px
 }
 
 .price{
   font:bold 15px Arial,sans-serif;
-  color:var(--accent);
+  color:var(--accent)
 }
 
 .add{
@@ -352,12 +269,7 @@ h1{
   color:var(--text);
   border-radius:12px;
   padding:7px 10px;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.add:hover{
-  transform:scale(1.08);
+  cursor:pointer
 }
 
 .heart{
@@ -367,12 +279,7 @@ h1{
   color:var(--accent);
   font-size:20px;
   cursor:pointer;
-  padding:0 5px;
-  transition:.2s;
-}
-
-.heart:hover{
-  transform:scale(1.3);
+  padding:0 5px
 }
 
 .special{
@@ -382,30 +289,24 @@ h1{
   border:1px solid var(--line);
   border-radius:28px;
   padding:30px;
-  text-align:center;
-  animation:softFloat 5s ease-in-out infinite;
-}
-
-@keyframes softFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-4px)}
+  text-align:center
 }
 
 .special h2{
   margin:6px;
-  font-size:30px;
+  font-size:30px
 }
 
 .special p{
   color:var(--muted);
-  font:15px Arial,sans-serif;
+  font:15px Arial,sans-serif
 }
 
 .codebox{
   display:flex;
   max-width:440px;
   margin:18px auto 0;
-  gap:8px;
+  gap:8px
 }
 
 .codebox input{
@@ -414,19 +315,13 @@ h1{
   background:var(--surface);
   color:var(--text);
   border-radius:12px;
-  padding:12px;
-  outline:none;
-}
-
-.codebox input:focus{
-  border-color:var(--accent);
+  padding:12px
 }
 
 .message{
   margin-top:12px;
   font:13px Arial,sans-serif;
-  color:var(--accent);
-  min-height:18px;
+  color:var(--accent)
 }
 
 .earnbox{
@@ -435,46 +330,31 @@ h1{
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:20px;
-  padding:22px;
-}
-
-.earnbox button{
-  border:0;
-  background:var(--accent);
-  color:#fff;
-  border-radius:999px;
-  padding:11px 18px;
-  cursor:pointer;
-  font:bold 13px Arial,sans-serif;
-  transition:.2s;
-}
-
-.earnbox button:hover{
-  transform:translateY(-2px);
+  padding:22px
 }
 
 .job-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
   gap:9px;
-  margin-top:16px;
+  margin-top:16px
 }
 
 .job{
-  border:1px solid var(--line)!important;
-  background:var(--soft)!important;
-  color:var(--text)!important;
-  border-radius:14px!important;
-  padding:11px!important;
+  border:1px solid var(--line);
+  background:var(--soft);
+  color:var(--text);
+  border-radius:14px;
+  padding:11px;
   cursor:pointer;
-  font:600 12px Arial,sans-serif!important;
+  font:600 12px Arial,sans-serif
 }
 
 .game-result{
   min-height:20px;
   margin-top:12px;
   font:13px Arial,sans-serif;
-  color:var(--accent);
+  color:var(--accent)
 }
 
 .levelbox{
@@ -483,13 +363,13 @@ h1{
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:22px;
-  padding:22px;
+  padding:22px
 }
 
 .levelrow{
   display:flex;
   justify-content:space-between;
-  font:600 13px Arial,sans-serif;
+  font:600 13px Arial,sans-serif
 }
 
 .progress{
@@ -497,7 +377,7 @@ h1{
   background:var(--soft);
   border-radius:999px;
   overflow:hidden;
-  margin-top:10px;
+  margin-top:10px
 }
 
 .progress span{
@@ -505,14 +385,14 @@ h1{
   height:100%;
   width:0;
   background:var(--accent);
-  transition:.5s;
+  transition:.3s
 }
 
 .achievements{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:10px;
-  margin-top:16px;
+  margin-top:16px
 }
 
 .achievement{
@@ -521,24 +401,19 @@ h1{
   padding:12px;
   background:var(--soft);
   font:12px Arial,sans-serif;
-  color:var(--muted);
-  transition:.2s;
+  color:var(--muted)
 }
 
 .achievement.unlocked{
   color:var(--text);
-  font-weight:700;
-}
-
-.achievement:hover{
-  transform:translateY(-3px);
+  font-weight:700
 }
 
 .upgrade-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:10px;
-  margin-top:16px;
+  margin-top:16px
 }
 
 .upgrade{
@@ -546,12 +421,7 @@ h1{
   background:var(--soft);
   border-radius:14px;
   padding:14px;
-  text-align:left;
-  transition:.2s;
-}
-
-.upgrade:hover{
-  transform:translateY(-3px);
+  text-align:left
 }
 
 .upgrade button{
@@ -562,7 +432,226 @@ h1{
   border-radius:9px;
   padding:7px 10px;
   cursor:pointer;
-  font:bold 11px Arial,sans-serif;
+  font:bold 11px Arial,sans-serif
+}
+
+/* sleepy's bakery corner */
+
+.corner-box{
+  max-width:900px;
+  margin:28px auto 0;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:26px;
+  box-shadow:0 10px 30px #0001
+}
+
+.corner-header{
+  text-align:center
+}
+
+.corner-header h2{
+  font-size:32px;
+  margin:7px 0
+}
+
+.corner-header p{
+  color:var(--muted);
+  font:14px Arial,sans-serif;
+  line-height:1.5
+}
+
+.corner-start{
+  display:flex;
+  justify-content:center;
+  margin-top:18px
+}
+
+.corner-game{
+  display:none;
+  margin-top:24px
+}
+
+.corner-game.active{
+  display:block
+}
+
+.customer-card{
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:22px;
+  text-align:center
+}
+
+.customer-face{
+  font-size:54px;
+  margin-bottom:6px
+}
+
+.customer-name{
+  font:bold 22px Georgia,"Times New Roman",serif
+}
+
+.customer-order{
+  margin:10px auto;
+  max-width:500px;
+  color:var(--muted);
+  font:14px Arial,sans-serif;
+  line-height:1.5
+}
+
+.order-name{
+  color:var(--text);
+  font-weight:700
+}
+
+.patience-label{
+  display:flex;
+  justify-content:space-between;
+  margin-top:18px;
+  font:600 12px Arial,sans-serif
+}
+
+.patience-bar{
+  height:13px;
+  background:var(--surface);
+  border-radius:999px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  margin-top:7px
+}
+
+.patience-fill{
+  width:100%;
+  height:100%;
+  background:var(--accent);
+  transition:width .3s
+}
+
+.corner-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:14px
+}
+
+.corner-stat{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:11px;
+  text-align:center
+}
+
+.corner-stat b{
+  display:block;
+  font-size:18px;
+  margin-bottom:3px
+}
+
+.corner-stat span{
+  color:var(--muted);
+  font:11px Arial,sans-serif
+}
+
+.station-title{
+  margin:24px 0 10px;
+  font:600 20px Georgia,"Times New Roman",serif
+}
+
+.station-subtitle{
+  color:var(--muted);
+  font:12px Arial,sans-serif;
+  margin-bottom:12px
+}
+
+.station-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:10px
+}
+
+.station{
+  border:1px solid var(--line);
+  background:var(--soft);
+  color:var(--text);
+  border-radius:16px;
+  padding:14px 10px;
+  cursor:pointer;
+  font:600 12px Arial,sans-serif;
+  transition:.2s
+}
+
+.station:hover{
+  transform:translateY(-2px)
+}
+
+.station.selected{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent)
+}
+
+.recipe-box{
+  margin-top:18px;
+  background:var(--bg);
+  border:1px dashed var(--line);
+  border-radius:18px;
+  padding:16px;
+  text-align:center
+}
+
+.recipe-box b{
+  font:600 16px Georgia,"Times New Roman",serif
+}
+
+.recipe-steps{
+  color:var(--muted);
+  font:12px Arial,sans-serif;
+  line-height:1.7;
+  margin-top:6px
+}
+
+.serve-button{
+  width:100%;
+  margin-top:18px;
+  border:0;
+  background:var(--accent);
+  color:#fff;
+  border-radius:999px;
+  padding:14px;
+  cursor:pointer;
+  font:bold 14px Arial,sans-serif
+}
+
+.serve-button:disabled{
+  opacity:.45;
+  cursor:not-allowed
+}
+
+.corner-message{
+  min-height:24px;
+  margin-top:14px;
+  text-align:center;
+  font:bold 13px Arial,sans-serif;
+  color:var(--accent)
+}
+
+.corner-history{
+  margin-top:18px;
+  display:grid;
+  gap:7px
+}
+
+.history-item{
+  border:1px solid var(--line);
+  background:var(--soft);
+  border-radius:12px;
+  padding:9px 12px;
+  font:12px Arial,sans-serif;
+  color:var(--muted)
 }
 
 .order{
@@ -576,13 +665,7 @@ h1{
   padding:13px 17px;
   font:bold 13px Arial,sans-serif;
   box-shadow:0 8px 25px #0002;
-  cursor:pointer;
-  z-index:30;
-  transition:.2s;
-}
-
-.order:hover{
-  transform:scale(1.06);
+  cursor:pointer
 }
 
 .drawer{
@@ -590,49 +673,30 @@ h1{
   right:20px;
   bottom:70px;
   width:min(360px,calc(100vw - 40px));
-  max-height:70vh;
-  overflow:auto;
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:22px;
   padding:20px;
   display:none;
-  z-index:40;
-  box-shadow:0 18px 50px #0003;
+  z-index:20;
+  box-shadow:0 18px 50px #0003
 }
 
-.drawer.open{
-  display:block;
-  animation:drawerIn .25s ease;
-}
+.drawer.open{display:block}
 
-@keyframes drawerIn{
-  from{
-    opacity:0;
-    transform:translateY(10px) scale(.97);
-  }
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
-
-.drawer h3{
-  margin-top:0;
-}
+.drawer h3{margin-top:0}
 
 .orderrow{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:8px 0;
   border-bottom:1px solid var(--line);
-  font:13px Arial,sans-serif;
+  font:13px Arial,sans-serif
 }
 
 .total{
   font:bold 16px Arial,sans-serif;
-  margin-top:14px;
+  margin-top:14px
 }
 
 .clear{
@@ -642,19 +706,7 @@ h1{
   color:var(--text);
   border-radius:10px;
   padding:8px;
-  cursor:pointer;
-}
-
-.purchase{
-  margin-top:12px;
-  width:100%;
-  border:0;
-  background:var(--accent);
-  color:#fff;
-  border-radius:10px;
-  padding:10px;
-  cursor:pointer;
-  font:bold 13px Arial,sans-serif;
+  cursor:pointer
 }
 
 footer{
@@ -662,222 +714,47 @@ footer{
   padding:45px 7vw;
   border-top:1px solid var(--line);
   color:var(--muted);
-  font:13px Arial,sans-serif;
+  font:13px Arial,sans-serif
 }
 
 .cat{
   font-size:18px;
-  margin-right:5px;
+  margin-right:5px
 }
 
 .lore{
-  max-width:780px;
-  margin:28px auto;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:24px;
-  text-align:center;
-}
-
-.lore p{
-  color:var(--muted);
-  font:14px Arial,sans-serif;
-  line-height:1.6;
-}
-
-.hours{
-  font:bold 13px Arial,sans-serif;
-  color:var(--accent);
-}
-
-.cat-button{
-  position:fixed;
-  left:20px;
-  bottom:20px;
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  border:2px solid var(--line);
-  background:var(--surface);
-  font-size:30px;
-  cursor:pointer;
-  z-index:30;
-  box-shadow:0 8px 25px #0002;
-  transition:.2s;
-}
-
-.cat-button:hover{
-  transform:translateY(-5px) rotate(-5deg);
-}
-
-.cat-message{
-  position:fixed;
-  left:20px;
-  bottom:92px;
-  width:min(250px,calc(100vw - 40px));
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:13px;
-  font:13px Arial,sans-serif;
-  color:var(--muted);
-  z-index:30;
-  display:none;
-  box-shadow:0 10px 30px #0002;
-}
-
-.cat-message.show{
-  display:block;
-  animation:popIn .25s ease;
-}
-
-@keyframes popIn{
-  from{
-    opacity:0;
-    transform:scale(.9);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-}
-
-.particle{
-  position:fixed;
-  pointer-events:none;
-  z-index:60;
-  animation:particleFloat 1.5s ease forwards;
-  font-size:18px;
-}
-
-@keyframes particleFloat{
-  0%{
-    opacity:0;
-    transform:translateY(10px) scale(.7) rotate(0);
-  }
-  25%{
-    opacity:1;
-  }
-  100%{
-    opacity:0;
-    transform:translateY(-55px) scale(1.25) rotate(20deg);
-  }
-}
-
-.toast{
-  position:fixed;
-  top:80px;
-  left:50%;
-  transform:translateX(-50%) translateY(-15px);
-  background:var(--text);
-  color:var(--bg);
-  padding:11px 17px;
-  border-radius:999px;
-  font:bold 12px Arial,sans-serif;
-  z-index:1000;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-}
-
-.toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
-}
-
-.mini-game{
   max-width:780px;
   margin:28px auto 0;
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:22px;
-  padding:25px;
-  text-align:center;
+  padding:24px;
+  text-align:center
 }
 
-.bake-button{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  border:5px solid var(--line);
-  background:var(--soft);
-  color:var(--text);
-  font-size:48px;
-  cursor:pointer;
-  transition:.12s;
-  margin:15px;
+.lore p{
+  color:var(--muted);
+  font:14px Arial,sans-serif;
+  line-height:1.6
 }
 
-.bake-button:active{
-  transform:scale(.9);
+.hours{
+  font:bold 13px Arial,sans-serif;
+  color:var(--accent)
 }
 
-.bake-score{
-  font:bold 14px Arial,sans-serif;
-  color:var(--accent);
-}
-
-@media(max-width:700px){
-  nav{
-    padding:14px 5vw;
-    gap:8px;
-  }
-
-  nav a{
-    display:none;
-  }
-
-  .balance{
-    margin-left:5px;
-  }
-
-  .theme-toggle{
-    margin-left:5px;
-  }
-
-  .hero{
-    padding:65px 6vw;
-  }
-
-  .section{
-    padding:48px 6vw;
-  }
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .card{
-    padding:15px;
-  }
-
-  .card p{
-    min-height:55px;
-  }
-
-  .codebox{
-    flex-direction:column;
-  }
-
-  .cat-button{
-    width:55px;
-    height:55px;
-    font-size:25px;
-    left:14px;
-    bottom:14px;
-  }
-
-  .order{
-    right:14px;
-    bottom:14px;
-  }
+@media(max-width:600px){
+  nav{padding:14px 5vw}
+  nav a{margin-left:9px;font-size:11px}
+  .hero{padding:65px 6vw}
+  .section{padding:48px 6vw}
+  .grid{grid-template-columns:1fr 1fr}
+  .card{padding:15px}
+  .card p{min-height:55px}
 }
 
 @media(max-width:390px){
-  .grid{
-    grid-template-columns:1fr;
-  }
+  .grid{grid-template-columns:1fr}
 }
 </style>
 
@@ -891,20 +768,14 @@ footer{
     <div style="font-size:44px">☁️🥐</div>
     <h2>welcome to sleepy's bakery</h2>
     <p>before you enter the bakery, please complete the quick security check.</p>
-
-    <div
-      class="cf-turnstile"
-      data-sitekey="0x4AAAAAAFLy1IccrHhIDQiW"
-      data-callback="turnstilePassed">
-    </div>
-
+    <div class="cf-turnstile"
+         data-sitekey="0x4AAAAAAFLy1IccrHhIDQiW"
+         data-callback="turnstilePassed"></div>
     <div class="turnstile-status" id="turnstileStatus">
       checking for sleepy lil human.. :D
     </div>
   </div>
 </div>
-
-<div class="toast" id="toast"></div>
 
 <div class="app">
 
@@ -922,7 +793,7 @@ footer{
 
     <button
       class="theme-toggle"
-      onclick="toggleTheme()"
+      onclick="document.body.classList.toggle('dark');this.textContent=document.body.classList.contains('dark')?'☀️ light':'🌙 dark'"
       id="themeToggle">
       🌙 dark
     </button>
@@ -930,27 +801,21 @@ footer{
 </nav>
 
 <header class="hero">
-
-  <div class="eyebrow">
-    freshly baked • cozy • dreamy
-  </div>
+  <div class="eyebrow">freshly baked • cozy • dreamy</div>
 
   <h1>sleepy's bakery</h1>
 
   <p>
     where every bite feels like a cozy dream.
-    pastries, tiny treats, sleepy sips and enough
-    cat-shaped desserts to keep the bakery lore alive.
+    pastries, tiny treats, sleepy sips and enough cat-shaped
+    desserts to keep the bakery lore alive.
   </p>
 
-  <div class="hours" id="hours">
-    ☁️ bakery is open
-  </div>
+  <div class="hours" id="hours">☁️ bakery is open</div>
 
   <a class="cta" href="#menu" style="margin-top:14px">
     explore the menu
   </a>
-
 </header>
 
 <section class="section" id="menu">
@@ -964,7 +829,6 @@ footer{
   <div class="filters" id="filters"></div>
 
   <div class="levelbox">
-
     <div class="levelrow">
       <span id="levelName">🌱 sleepy trainee</span>
       <span id="xpText">0 / 100 xp</span>
@@ -973,7 +837,6 @@ footer{
     <div class="progress">
       <span id="xpFill"></span>
     </div>
-
   </div>
 
   <div class="grid" id="grid"></div>
@@ -984,26 +847,20 @@ footer{
 
   <div class="daily special">
 
-    <div class="eyebrow">
-      today's feature
-    </div>
+    <div class="eyebrow">today's feature</div>
 
     <h2>🌙 what's baking?</h2>
 
     <p id="specialText">
       our daily special changes every day.
-      today, the bakery is serving a surprise treat
-      fresh from the oven.
+      today, the bakery is serving a surprise treat fresh from the oven.
     </p>
 
     <div class="price" id="specialPrice">
       today's special • $3.50
     </div>
 
-    <button
-      class="cta"
-      style="margin-top:14px"
-      onclick="newSpecial()">
+    <button class="cta" style="margin-top:14px" onclick="newSpecial()">
       🎲 reveal today's special
     </button>
 
@@ -1011,9 +868,7 @@ footer{
 
   <div class="levelbox">
 
-    <div class="eyebrow">
-      🏆 bakery achievements
-    </div>
+    <div class="eyebrow">🏆 bakery achievements</div>
 
     <div class="achievements" id="achievements"></div>
 
@@ -1021,85 +876,39 @@ footer{
 
   <div class="levelbox">
 
-    <div class="eyebrow">
-      🪴 bakery upgrades
-    </div>
+    <div class="eyebrow">🪴 bakery upgrades</div>
 
-    <p>
-      spend sleepy dollars to make the bakery even cozier.
-    </p>
+    <p>spend sleepy dollars to make the bakery even cozier.</p>
 
     <div class="upgrade-grid">
 
       <div class="upgrade">
-        <b>🪴 window plants</b>
-        <br>
-        <small>+10 cozy xp</small>
-        <br>
-        <button onclick="buyUpgrade('plants',25)">
-          $25
-        </button>
+        <b>🪴 window plants</b><br>
+        <small>+10 cozy xp</small><br>
+        <button onclick="buyUpgrade('plants',25)">$25</button>
       </div>
 
       <div class="upgrade">
-        <b>🔥 dreamy oven</b>
-        <br>
-        <small>+20 cozy xp</small>
-        <br>
-        <button onclick="buyUpgrade('oven',50)">
-          $50
-        </button>
+        <b>🔥 dreamy oven</b><br>
+        <small>+20 cozy xp</small><br>
+        <button onclick="buyUpgrade('oven',50)">$50</button>
       </div>
 
       <div class="upgrade">
-        <b>🛏️ cat bed</b>
-        <br>
-        <small>+15 cozy xp</small>
-        <br>
-        <button onclick="buyUpgrade('bed',35)">
-          $35
-        </button>
+        <b>🛏️ cat bed</b><br>
+        <small>+15 cozy xp</small><br>
+        <button onclick="buyUpgrade('bed',35)">$35</button>
       </div>
 
       <div class="upgrade">
-        <b>🎀 pink counter</b>
-        <br>
-        <small>+25 cozy xp</small>
-        <br>
-        <button onclick="buyUpgrade('counter',60)">
-          $60
-        </button>
+        <b>🎀 pink counter</b><br>
+        <small>+25 cozy xp</small><br>
+        <button onclick="buyUpgrade('counter',60)">$60</button>
       </div>
 
     </div>
 
     <div class="message" id="upgradeResult"></div>
-
-  </div>
-
-  <div class="mini-game">
-
-    <div class="eyebrow">
-      🎮 sleepy baking mini-game
-    </div>
-
-    <h2>bake something!</h2>
-
-    <p>
-      click the oven and bake treats to earn cozy xp.
-    </p>
-
-    <button
-      class="bake-button"
-      onclick="bakeTreat()">
-      🧁
-    </button>
-
-    <div class="bake-score" id="bakeScore">
-      treats baked: 0
-    </div>
-
-    <div class="game-result" id="bakeResult"></div>
 
   </div>
 
@@ -1109,9 +918,7 @@ footer{
 
   <div class="special">
 
-    <div class="eyebrow">
-      secret bakery club
-    </div>
+    <div class="eyebrow">secret bakery club</div>
 
     <h2>🎀 got a code?</h2>
 
@@ -1135,6 +942,232 @@ footer{
 
     <div class="message" id="message"></div>
 
+    <!-- sleepy's bakery corner -->
+
+    <div class="corner-box">
+
+      <div class="corner-header">
+
+        <div class="eyebrow">☕ little game corner</div>
+
+        <h2>sleepy's bakery corner</h2>
+
+        <p>
+          bake pastries, decorate treats, make cozy drinks,
+          and serve sleepy customers.
+        </p>
+
+      </div>
+
+      <div class="corner-start">
+        <button class="cta" onclick="startBakeryCorner()">
+          🎮 enter bakery corner
+        </button>
+      </div>
+
+      <div class="corner-game" id="bakeryCorner">
+
+        <div class="customer-card">
+
+          <div class="customer-face" id="cornerFace">🐱</div>
+
+          <div class="customer-name" id="cornerCustomerName">
+            mimi
+          </div>
+
+          <div class="customer-order">
+            <span>order:</span>
+            <span class="order-name" id="cornerOrderName">
+              strawberry croissant
+            </span>
+            <br>
+            <span id="cornerOrderDescription">
+              strawberry cream croissant
+            </span>
+          </div>
+
+          <div class="patience-label">
+            <span>❤️ patience</span>
+            <span id="cornerPatienceText">100%</span>
+          </div>
+
+          <div class="patience-bar">
+            <div
+              class="patience-fill"
+              id="cornerPatienceFill">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="corner-stats">
+
+          <div class="corner-stat">
+            <b id="cornerCombo">0</b>
+            <span>🔥 combo</span>
+          </div>
+
+          <div class="corner-stat">
+            <b id="cornerServed">0</b>
+            <span>🐱 served</span>
+          </div>
+
+          <div class="corner-stat">
+            <b id="cornerPerfect">0</b>
+            <span>⭐ perfect</span>
+          </div>
+
+        </div>
+
+        <div class="station-title">
+          🔥 baking station
+        </div>
+
+        <div class="station-subtitle">
+          choose the pastry base the customer ordered
+        </div>
+
+        <div class="station-grid">
+
+          <button class="station" onclick="chooseCorner('bake croissant')">
+            🥐 bake croissant
+          </button>
+
+          <button class="station" onclick="chooseCorner('bake cream puff')">
+            ☁️ bake cream puff
+          </button>
+
+          <button class="station" onclick="chooseCorner('bake cupcake')">
+            🧁 bake cupcake
+          </button>
+
+          <button class="station" onclick="chooseCorner('bake danish')">
+            🍓 bake danish
+          </button>
+
+          <button class="station" onclick="chooseCorner('bake cookie')">
+            🍪 bake cookie
+          </button>
+
+          <button class="station" onclick="chooseCorner('bake donut')">
+            🍩 bake donut
+          </button>
+
+          <button class="station" onclick="chooseCorner('make pancakes')">
+            🥞 make pancakes
+          </button>
+
+          <button class="station" onclick="chooseCorner('make waffles')">
+            🧇 make waffles
+          </button>
+
+        </div>
+
+        <div class="station-title">
+          🥤 drink station
+        </div>
+
+        <div class="station-subtitle">
+          some sleepy customers just want a cozy drink
+        </div>
+
+        <div class="station-grid">
+
+          <button class="station" onclick="chooseCorner('make latte')">
+            ☕ make latte
+          </button>
+
+          <button class="station" onclick="chooseCorner('make drink')">
+            🥤 make drink
+          </button>
+
+        </div>
+
+        <div class="station-title">
+          🎀 finishing station
+        </div>
+
+        <div class="station-subtitle">
+          add the final ingredient or decoration
+        </div>
+
+        <div class="station-grid">
+
+          <button class="station" onclick="chooseCorner('strawberry cream')">
+            🍓 strawberry cream
+          </button>
+
+          <button class="station" onclick="chooseCorner('matcha cream')">
+            🍵 matcha cream
+          </button>
+
+          <button class="station" onclick="chooseCorner('chocolate frosting')">
+            🍫 chocolate frosting
+          </button>
+
+          <button class="station" onclick="chooseCorner('blueberry filling')">
+            🫐 blueberry filling
+          </button>
+
+          <button class="station" onclick="chooseCorner('powdered sugar')">
+            ☁️ powdered sugar
+          </button>
+
+          <button class="station" onclick="chooseCorner('sprinkles')">
+            🌈 sprinkles
+          </button>
+
+          <button class="station" onclick="chooseCorner('honey')">
+            🍯 honey
+          </button>
+
+          <button class="station" onclick="chooseCorner('cinnamon')">
+            🤎 cinnamon
+          </button>
+
+          <button class="station" onclick="chooseCorner('oat milk')">
+            🥛 oat milk
+          </button>
+
+          <button class="station" onclick="chooseCorner('matcha')">
+            🍵 matcha
+          </button>
+
+        </div>
+
+        <div class="recipe-box">
+
+          <b>📝 your sleepy recipe</b>
+
+          <div
+            class="recipe-steps"
+            id="cornerRecipe">
+            choose the correct steps for the order above
+          </div>
+
+        </div>
+
+        <button
+          class="serve-button"
+          id="cornerServeButton"
+          onclick="serveCorner()"
+          disabled>
+          🍽️ serve customer
+        </button>
+
+        <div
+          class="corner-message"
+          id="cornerResult">
+        </div>
+
+        <div class="corner-history" id="cornerHistory"></div>
+
+      </div>
+
+    </div>
+
+    <!-- regular sleepy cashier -->
+
     <div class="earnbox">
 
       <div class="eyebrow">
@@ -1148,7 +1181,7 @@ footer{
         to earn sleepy dollars.
       </p>
 
-      <button onclick="earnMoney()">
+      <button class="cta" onclick="earnMoney()">
         💵 serve a customer
       </button>
 
@@ -1192,9 +1225,7 @@ footer{
 
     <div class="levelbox">
 
-      <div class="eyebrow">
-        🎁 daily reward
-      </div>
+      <div class="eyebrow">🎁 daily reward</div>
 
       <h3>claim your sleepy dollars</h3>
 
@@ -1220,13 +1251,9 @@ footer{
 
 <section class="lore">
 
-  <div class="eyebrow">
-    📖 bakery lore
-  </div>
+  <div class="eyebrow">📖 bakery lore</div>
 
-  <h2>
-    the little story behind sleepy's
-  </h2>
+  <h2>the little story behind sleepy's</h2>
 
   <p>
     sleepy’s bakery began as a tiny warm kitchen where
@@ -1235,9 +1262,7 @@ footer{
     corner for anyone who wants something sweet and dreamy.
   </p>
 
-  <p>
-    <b>custom bakery sign</b>
-  </p>
+  <p><b>custom bakery sign</b></p>
 
   <div class="codebox">
 
@@ -1258,21 +1283,13 @@ footer{
 
 </section>
 
-<button class="cat-button" onclick="petSleepy()">
-  🐱
-</button>
-
-<div class="cat-message" id="catMessage"></div>
-
 <button class="order" onclick="toggleOrder()">
   🛍 order <span id="count">0</span>
 </button>
 
 <div class="drawer" id="drawer">
 
-  <h3>
-    your sleepy order ☁️
-  </h3>
+  <h3>your sleepy order ☁️</h3>
 
   <div id="orderItems">
     <p style="color:var(--muted);font:13px Arial">
@@ -1286,13 +1303,12 @@ footer{
 
   <button
     class="purchase"
+    style="margin-top:12px;width:100%;border:0;background:var(--accent);color:#fff;border-radius:10px;padding:10px;cursor:pointer;font:bold 13px Arial,sans-serif"
     onclick="purchaseOrder()">
     purchase order 🛍️
   </button>
 
-  <button
-    class="clear"
-    onclick="clearOrder()">
+  <button class="clear" onclick="clearOrder()">
     clear order
   </button>
 
@@ -1303,651 +1319,296 @@ footer{
 <script>
 
 function turnstilePassed(){
-  document.getElementById("turnstileStatus").textContent =
-    "verified! welcome in ☁️🥐";
+  document.getElementById('turnstileStatus').textContent='verified! welcome in ☁️🥐';
 
-  setTimeout(function(){
-    const gate=document.getElementById("turnstileGate");
-    if(gate) gate.remove();
-  },350);
+  setTimeout(()=>{
+    document.getElementById('turnstileGate').remove()
+  },350)
 }
 
-if(location.hostname!=="sleepys-bakery.stellayt667.workers.dev"){
-  const gate=document.getElementById("turnstileGate");
-  if(gate) gate.remove();
+if(location.hostname!=='sleepys-bakery.stellayt667.workers.dev'){
+  document.getElementById('turnstileGate').remove()
 }
-
-
-/* =========================
-   bakery menu
-========================= */
 
 const items=[
 
-["pastries","🥐","sleepy croissant","soft, buttery and flaky","$2.50"],
-["pastries","🍓","strawberry cream croissant","fresh strawberries + whipped cream","$3.50"],
-["pastries","🍫","chocolate hazelnut croissant","flaky layers + hazelnut chocolate","$4.00"],
-["pastries","🍯","honey butter danish","sweet honey glaze + buttery pastry","$3.00"],
-["pastries","🫐","blueberry cream danish","blueberry filling + vanilla cream","$3.50"],
-["pastries","🍎","apple cinnamon danish","warm apples + cinnamon sugar","$3.00"],
-["pastries","🌹","raspberry rose danish","raspberry filling + delicate rose glaze","$3.50"],
-["pastries","🍵","matcha cream puff","light choux + matcha cream","$3.50"],
+['pastries','🥐','sleepy croissant','soft, buttery and flaky','$2.50'],
+['pastries','🍓','strawberry cream croissant','fresh strawberries + whipped cream','$3.50'],
+['pastries','🍫','chocolate hazelnut croissant','flaky layers + hazelnut chocolate','$4.00'],
+['pastries','🍯','honey butter danish','sweet honey glaze + buttery pastry','$3.00'],
+['pastries','🫐','blueberry cream danish','blueberry filling + vanilla cream','$3.50'],
+['pastries','🍎','apple cinnamon danish','warm apples + cinnamon sugar','$3.00'],
+['pastries','🌹','raspberry rose danish','raspberry filling + delicate rose glaze','$3.50'],
+['pastries','🍵','matcha cream puff','light choux + matcha cream','$3.50'],
 
-["cakes","🍓","strawberry dream cake","vanilla sponge + strawberry cream","$6.50"],
-["cakes","☁️","vanilla cloud cake","soft vanilla sponge + fluffy cream","$5.50"],
-["cakes","🍫","midnight chocolate cake","rich chocolate + ganache","$6.00"],
-["cakes","🍓","strawberry shortcake","vanilla sponge + fresh berries","$6.50"],
-["cakes","🍵","matcha cloud cake","matcha sponge + sweet cream","$6.50"],
-["cakes","🫐","blueberry milk cake","soft milk cake + blueberry cream","$6.00"],
-["cakes","🍋","lemon sunshine cake","lemon sponge + silky frosting","$5.50"],
-["cakes","🌹","rose milk cake","soft milk cake + rose cream","$6.00"],
+['cakes','🍓','strawberry dream cake','vanilla sponge + strawberry cream','$6.50'],
+['cakes','☁️','vanilla cloud cake','soft vanilla sponge + fluffy cream','$5.50'],
+['cakes','🍫','midnight chocolate cake','rich chocolate + ganache','$6.00'],
+['cakes','🍓','strawberry shortcake','vanilla sponge + fresh berries','$6.50'],
+['cakes','🍵','matcha cloud cake','matcha sponge + sweet cream','$6.50'],
+['cakes','🫐','blueberry milk cake','soft milk cake + blueberry cream','$6.00'],
+['cakes','🍋','lemon sunshine cake','lemon sponge + silky frosting','$5.50'],
+['cakes','🌹','rose milk cake','soft milk cake + rose cream','$6.00'],
 
-["cupcakes","🎀","pink vanilla cupcake","vanilla cake + strawberry buttercream","$2.50"],
-["cupcakes","🍫","chocolate dream cupcake","chocolate cake + chocolate frosting","$2.50"],
-["cupcakes","🍓","strawberry cloud cupcake","strawberry sponge + whipped cream","$3.00"],
-["cupcakes","🍵","matcha sweetheart cupcake","matcha cake + vanilla cream","$3.00"],
-["cupcakes","🫐","blueberry swirl cupcake","vanilla cake + blueberry frosting","$3.00"],
-["cupcakes","🐱","sleepy cat cupcake","a tiny sleepy cat made of frosting","$3.50"],
+['cupcakes','🎀','pink vanilla cupcake','vanilla cake + strawberry buttercream','$2.50'],
+['cupcakes','🍫','chocolate dream cupcake','chocolate cake + chocolate frosting','$2.50'],
+['cupcakes','🍓','strawberry cloud cupcake','strawberry sponge + whipped cream','$3.00'],
+['cupcakes','🍵','matcha sweetheart cupcake','matcha cake + vanilla cream','$3.00'],
+['cupcakes','🫐','blueberry swirl cupcake','vanilla cake + blueberry frosting','$3.00'],
+['cupcakes','🐱','sleepy cat cupcake','a tiny sleepy cat made of frosting','$3.50'],
 
-["cookies","🍪","classic chocolate chip cookie","crispy edges + gooey center","$1.50"],
-["cookies","🍫","triple chocolate cookie","dark + milk + white chocolate","$2.00"],
-["cookies","🍓","strawberry milk cookie","strawberry cookie + white chocolate","$2.00"],
-["cookies","🍵","matcha white chocolate cookie","matcha dough + white chocolate","$2.00"],
-["cookies","🐱","kitty cookie","a buttery cookie shaped like a tiny kitty","$2.00"],
-["cookies","🥜","peanut butter cookie","soft peanut butter + powdered sugar","$2.00"],
-["cookies","🍋","lemon sugar cookie","zesty lemon + sparkling sugar","$1.75"],
+['cookies','🍪','classic chocolate chip cookie','crispy edges + gooey center','$1.50'],
+['cookies','🍫','triple chocolate cookie','dark + milk + white chocolate','$2.00'],
+['cookies','🍓','strawberry milk cookie','strawberry cookie + white chocolate','$2.00'],
+['cookies','🍵','matcha white chocolate cookie','matcha dough + white chocolate','$2.00'],
+['cookies','🐱','kitty cookie','a buttery cookie shaped like a tiny kitty','$2.00'],
+['cookies','🥜','peanut butter cookie','soft peanut butter + powdered sugar','$2.00'],
+['cookies','🍋','lemon sugar cookie','zesty lemon + sparkling sugar','$1.75'],
 
-["donuts","🍓","strawberry cloud donut","strawberry glaze + cream","$2.50"],
-["donuts","🍫","chocolate dream donut","chocolate glaze + drizzle","$2.50"],
-["donuts","☁️","vanilla sugar donut","vanilla glaze + powdered sugar","$2.00"],
-["donuts","🍵","matcha moon donut","matcha glaze + white chocolate","$3.00"],
-["donuts","🫐","blueberry sky donut","blueberry glaze + vanilla drizzle","$2.50"],
-["donuts","🍯","honey butter donut","honey glaze + buttery crumble","$2.50"],
+['donuts','🍓','strawberry cloud donut','strawberry glaze + cream','$2.50'],
+['donuts','🍫','chocolate dream donut','chocolate glaze + drizzle','$2.50'],
+['donuts','☁️','vanilla sugar donut','vanilla glaze + powdered sugar','$2.00'],
+['donuts','🍵','matcha moon donut','matcha glaze + white chocolate','$3.00'],
+['donuts','🫐','blueberry sky donut','blueberry glaze + vanilla drizzle','$2.50'],
+['donuts','🍯','honey butter donut','honey glaze + buttery crumble','$2.50'],
 
-["treats","🍓","strawberry tart","buttery crust + custard + strawberries","$4.00"],
-["treats","🫐","blueberry crumble tart","blueberries + buttery crumble","$4.00"],
-["treats","🍎","mini apple pie","cinnamon apples + flaky pastry","$3.50"],
-["treats","🍫","chocolate brownie","fudgy brownie + chocolate chunks","$3.00"],
-["treats","☁️","brownie cloud","warm brownie + whipped cream","$4.00"],
-["treats","🍓","strawberry cheesecake cup","cheesecake cream + strawberries","$4.50"],
-["treats","🍵","matcha pudding","silky matcha pudding + vanilla cream","$3.50"],
+['treats','🍓','strawberry tart','buttery crust + custard + strawberries','$4.00'],
+['treats','🫐','blueberry crumble tart','blueberries + buttery crumble','$4.00'],
+['treats','🍎','mini apple pie','cinnamon apples + flaky pastry','$3.50'],
+['treats','🍫','chocolate brownie','fudgy brownie + chocolate chunks','$3.00'],
+['treats','☁️','brownie cloud','warm brownie + whipped cream','$4.00'],
+['treats','🍓','strawberry cheesecake cup','cheesecake cream + strawberries','$4.50'],
+['treats','🍵','matcha pudding','silky matcha pudding + vanilla cream','$3.50'],
 
-["breakfast","🥞","strawberry pancakes","fluffy pancakes + strawberries + cream","$6.00"],
-["breakfast","🧇","vanilla waffles","crispy waffles + powdered sugar","$5.50"],
-["breakfast","🫐","berry french toast","brioche + berries + maple syrup","$6.50"],
-["breakfast","🥐","croissant breakfast box","croissant + fruit + mini pastry","$7.00"],
-["breakfast","🍯","honey toast","thick toast + butter + honey","$4.00"],
-["breakfast","🍫","chocolate crepe","soft crepe + chocolate drizzle","$6.00"],
-["breakfast","🍓","berry crepe","soft crepe + mixed berries","$6.00"],
+['breakfast','🥞','strawberry pancakes','fluffy pancakes + strawberries + cream','$6.00'],
+['breakfast','🧇','vanilla waffles','crispy waffles + powdered sugar','$5.50'],
+['breakfast','🫐','berry french toast','brioche + berries + maple syrup','$6.50'],
+['breakfast','🥐','croissant breakfast box','croissant + fruit + mini pastry','$7.00'],
+['breakfast','🍯','honey toast','thick toast + butter + honey','$4.00'],
+['breakfast','🍫','chocolate crepe','soft crepe + chocolate drizzle','$6.00'],
+['breakfast','🍓','berry crepe','soft crepe + mixed berries','$6.00'],
 
-["sandwiches","🥪","sleepy ham & cheese","soft bread + ham + melted cheese","$5.00"],
-["sandwiches","🥑","chicken avocado sandwich","grilled chicken + avocado + lettuce","$6.00"],
-["sandwiches","🍓","strawberry cream sandwich","fluffy bread + cream + strawberries","$4.50"],
-["sandwiches","🥚","egg & cheese sandwich","fluffy egg + melted cheese","$4.50"],
-["sandwiches","🧀","tuna & cheese melt sandwich","tuna + melted cheese + toasted bread","$5.50"],
-["sandwiches","🐔","chicken salad sandwich","creamy chicken salad + lettuce","$5.00"],
-["sandwiches","🍯","honey chicken sandwich","savory chicken + sweet honey glaze","$5.50"],
+['sandwiches','🥪','sleepy ham & cheese','soft bread + ham + melted cheese','$5.00'],
+['sandwiches','🥑','chicken avocado sandwich','grilled chicken + avocado + lettuce','$6.00'],
+['sandwiches','🍓','strawberry cream sandwich','fluffy bread + cream + strawberries','$4.50'],
+['sandwiches','🥚','egg & cheese sandwich','fluffy egg + melted cheese','$4.50'],
+['sandwiches','🧀','tuna & cheese melt sandwich','tuna + melted cheese + toasted bread','$5.50'],
+['sandwiches','🐔','chicken salad sandwich','creamy chicken salad + lettuce','$5.00'],
+['sandwiches','🍯','honey chicken sandwich','savory chicken + sweet honey glaze','$5.50'],
 
-["drinks","🍓","strawberry milk","creamy strawberry milk","$3.00"],
-["drinks","🍵","iced matcha latte","matcha + milk + ice","$4.00"],
-["drinks","☁️","vanilla cloud latte","vanilla latte + fluffy cream","$4.00"],
-["drinks","🍫","sleepy hot chocolate","rich cocoa + marshmallows","$3.50"],
-["drinks","🫐","blueberry milk","sweet blueberry milk","$3.00"],
-["drinks","🍯","honey cinnamon latte","espresso + honey + cinnamon","$4.00"],
-["drinks","🍋","sleepy lemonade","fresh lemonade","$2.50"],
-["drinks","🌹","strawberry rose soda","strawberry + rose + sparkling soda","$3.50"],
+['drinks','🍓','strawberry milk','creamy strawberry milk','$3.00'],
+['drinks','🍵','iced matcha latte','matcha + milk + ice','$4.00'],
+['drinks','☁️','vanilla cloud latte','vanilla latte + fluffy cream','$4.00'],
+['drinks','🍫','sleepy hot chocolate','rich cocoa + marshmallows','$3.50'],
+['drinks','🫐','blueberry milk','sweet blueberry milk','$3.00'],
+['drinks','🍯','honey cinnamon latte','espresso + honey + cinnamon','$4.00'],
+['drinks','🍋','sleepy lemonade','fresh lemonade','$2.50'],
+['drinks','🌹','strawberry rose soda','strawberry + rose + sparkling soda','$3.50'],
 
-["boxes","🎀","sleepy starter box","a cozy little mix of bakery favorites","$8.50"],
-["boxes","💗","pink dream box","a dreamy pink assortment of treats","$11.00"],
-["boxes","🍫","chocolate lover box","a chocolate-filled bakery box","$12.00"],
-["boxes","🌷","garden party box","a sweet floral-inspired assortment","$12.50"],
-["boxes","🌙","goodnight box","a sleepy selection for late-night cravings","$10.00"],
-["boxes","💕","sweetheart box","a special box made for sharing","$13.50"]
+['boxes','🎀','sleepy starter box','a cozy little mix of bakery favorites','$8.50'],
+['boxes','💗','pink dream box','a dreamy pink assortment of treats','$11.00'],
+['boxes','🍫','chocolate lover box','a chocolate-filled bakery box','$12.00'],
+['boxes','🌷','garden party box','a sweet floral-inspired assortment','$12.50'],
+['boxes','🌙','goodnight box','a sleepy selection for late-night cravings','$10.00'],
+['boxes','💕','sweetheart box','a special box made for sharing','$13.50']
 
-];
-
+]
 
 const names={
-  all:"all",
-  pastries:"🥐 pastries",
-  cakes:"🍰 cakes",
-  cupcakes:"🧁 cupcakes",
-  cookies:"🍪 cookies",
-  donuts:"🍩 donuts",
-  treats:"🥧 treats",
-  breakfast:"🥞 sleepy breakfast",
-  sandwiches:"🥪 sleepy sandwiches",
-  drinks:"🥤 sleepy sips",
-  boxes:"🎁 bakery boxes"
-};
-
-
-let current="all";
-let order=[];
-let balance=500;
-let favorites=[];
-let xp=0;
-let upgrades={};
-let lastTipDay="";
-let baked=0;
-let claimedCodes=[];
-
-
-/* =========================
-   saving
-========================= */
-
-function saveProgress(){
-
-  const data={
-    balance:balance,
-    favorites:favorites,
-    xp:xp,
-    upgrades:upgrades,
-    lastTipDay:lastTipDay,
-    baked:baked,
-    claimedCodes:claimedCodes,
-    sign:
-      document.getElementById("signText")
-      ? document.getElementById("signText").textContent
-      : "",
-    dark:
-      document.body.classList.contains("dark")
-  };
-
-  localStorage.setItem(
-    "sleepyBakerySave",
-    JSON.stringify(data)
-  );
+  all:'all',
+  pastries:'🥐 pastries',
+  cakes:'🍰 cakes',
+  cupcakes:'🧁 cupcakes',
+  cookies:'🍪 cookies',
+  donuts:'🍩 donuts',
+  treats:'🥧 treats',
+  breakfast:'🥞 sleepy breakfast',
+  sandwiches:'🥪 sleepy sandwiches',
+  drinks:'🥤 sleepy sips',
+  boxes:'🎁 bakery boxes'
 }
 
-
-function loadProgress(){
-
-  try{
-
-    const saved=JSON.parse(
-      localStorage.getItem("sleepyBakerySave")
-    );
-
-    if(!saved) return;
-
-    if(typeof saved.balance==="number")
-      balance=saved.balance;
-
-    if(Array.isArray(saved.favorites))
-      favorites=saved.favorites;
-
-    if(typeof saved.xp==="number")
-      xp=saved.xp;
-
-    if(saved.upgrades)
-      upgrades=saved.upgrades;
-
-    if(saved.lastTipDay)
-      lastTipDay=saved.lastTipDay;
-
-    if(typeof saved.baked==="number")
-      baked=saved.baked;
-
-    if(Array.isArray(saved.claimedCodes))
-      claimedCodes=saved.claimedCodes;
-
-    if(saved.sign){
-      const sign=document.getElementById("signText");
-      if(sign) sign.textContent=saved.sign;
-    }
-
-    if(saved.dark){
-      document.body.classList.add("dark");
-      document.getElementById("themeToggle").textContent="☀️ light";
-    }
-
-  }catch(error){
-
-    console.log("sleepy save could not load",error);
-
-  }
-
-}
-
-
-/* =========================
-   toast
-========================= */
-
-let toastTimer;
-
-function showToast(text){
-
-  const toast=document.getElementById("toast");
-
-  toast.textContent=text;
-  toast.classList.add("show");
-
-  clearTimeout(toastTimer);
-
-  toastTimer=setTimeout(function(){
-    toast.classList.remove("show");
-  },2200);
-
-}
-
-
-/* =========================
-   particles
-========================= */
-
-function sparkle(){
-
-  const particle=document.createElement("span");
-
-  const choices=[
-    "✦",
-    "♡",
-    "☁️",
-    "✨",
-    "🍓",
-    "🥐",
-    "🌷"
-  ];
-
-  particle.textContent=
-    choices[Math.floor(Math.random()*choices.length)];
-
-  particle.className="particle";
-
-  particle.style.left=
-    Math.random()*100+"vw";
-
-  particle.style.top=
-    Math.random()*100+"vh";
-
-  particle.style.fontSize=
-    (12+Math.random()*15)+"px";
-
-  document.body.appendChild(particle);
-
-  setTimeout(function(){
-    particle.remove();
-  },1500);
-}
-
-setInterval(sparkle,1800);
-
-
-/* =========================
-   theme
-========================= */
-
-function toggleTheme(){
-
-  document.body.classList.toggle("dark");
-
-  const button=document.getElementById("themeToggle");
-
-  button.textContent=
-    document.body.classList.contains("dark")
-      ? "☀️ light"
-      : "🌙 dark";
-
-  saveProgress();
-
-  showToast(
-    document.body.classList.contains("dark")
-      ? "cozy night mode activated 🌙"
-      : "daylight mode activated ☀️"
-  );
-
-}
-
-
-/* =========================
-   filters
-========================= */
+let current='all'
+let order=[]
+let balance=500
+let favorites=[]
+let xp=0
+let upgrades={}
+let lastTipDay=''
 
 function renderFilters(){
 
-  const all=Object.entries(names);
+  let all=Object.entries(names)
 
-  all.push([
-    "favorites",
-    "♡ favorites"
-  ]);
+  all.push(['favorites','♡ favorites'])
 
-  document.getElementById("filters").innerHTML=
-    all.map(function(entry){
-
-      const key=entry[0];
-      const value=entry[1];
-
-      return `
-        <button
-          class="filter ${key===current?"active":""}"
-          onclick="setCat('${key}')">
-          ${value}
-        </button>
-      `;
-
-    }).join("");
-
+  document.getElementById('filters').innerHTML=
+    all.map(([k,v])=>
+      `<button class="filter ${k===current?'active':''}" onclick="setCat('${k}')">${v}</button>`
+    ).join('')
 }
-
-
-function setCat(category){
-
-  current=category;
-
-  render();
-
-  window.scrollTo({
-    top:document.getElementById("menu").offsetTop-60,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* =========================
-   menu rendering
-========================= */
 
 function render(){
 
-  renderFilters();
+  renderFilters()
 
-  const grid=document.getElementById("grid");
+  let card=x=>
+    `<article class="card">
+      <div class="emoji">${x[1]}</div>
 
-  let shown;
+      <button
+        class="heart"
+        onclick='toggleFavorite(${JSON.stringify(x[2])})'>
+        ${favorites.includes(x[2])?'♥':'♡'}
+      </button>
 
-  if(current==="favorites"){
+      <h3>${x[2]}</h3>
 
-    shown=items.filter(function(item){
-      return favorites.includes(item[2]);
-    });
+      <p>${x[3]}</p>
 
-  }else if(current==="all"){
+      <span class="price">${x[4]}</span>
 
-    shown=items;
+      <button
+        class="add"
+        onclick='addItem(${JSON.stringify(x[2])},${JSON.stringify(x[4])})'>
+        + add
+      </button>
+    </article>`
 
-  }else{
+  let grid=document.getElementById('grid')
 
-    shown=items.filter(function(item){
-      return item[0]===current;
-    });
+  let shown=
+    current==='favorites'
+      ?items.filter(x=>favorites.includes(x[2]))
+      :current==='all'
+        ?items
+        :items.filter(x=>x[0]===current)
 
-  }
+  grid.innerHTML=shown.map(card).join('')
 
-  if(!shown.length){
-
-    grid.innerHTML=`
-      <div class="special">
-        <h2>♡ no favorites yet</h2>
-        <p>
-          click the little hearts on treats you love.
-        </p>
-      </div>
-    `;
-
-    updateGame();
-    return;
-  }
-
-  grid.innerHTML=shown.map(function(x,index){
-
-    return `
-      <article
-        class="card"
-        style="animation-delay:${Math.min(index,12)*.025}s">
-
-        <div class="emoji">
-          ${x[1]}
-        </div>
-
-        <button
-          class="heart"
-          onclick='toggleFavorite(${JSON.stringify(x[2])})'>
-          ${favorites.includes(x[2])?"♥":"♡"}
-        </button>
-
-        <h3>${x[2]}</h3>
-
-        <p>${x[3]}</p>
-
-        <span class="price">
-          ${x[4]}
-        </span>
-
-        <button
-          class="add"
-          onclick='addItem(${JSON.stringify(x[2])},${JSON.stringify(x[4])})'>
-          + add
-        </button>
-
-      </article>
-    `;
-
-  }).join("");
-
-  updateGame();
-
+  updateGame()
 }
 
+function setCat(k){
+  current=k
+  render()
+}
 
 function toggleFavorite(name){
 
-  if(favorites.includes(name)){
+  favorites=
+    favorites.includes(name)
+      ?favorites.filter(x=>x!==name)
+      :favorites.concat(name)
 
-    favorites=favorites.filter(function(x){
-      return x!==name;
-    });
-
-    showToast("removed from favorites ♡");
-
-  }else{
-
-    favorites.push(name);
-
-    addXP(3);
-
-    showToast("added to favorites ♡");
-
-  }
-
-  saveProgress();
-
-  render();
-
+  render()
 }
-
-
-/* =========================
-   xp + levels
-========================= */
 
 function addXP(amount){
-
-  xp+=amount;
-
-  updateGame();
-
-  saveProgress();
-
+  xp+=amount
+  updateGame()
 }
-
 
 function updateGame(){
 
-  const levels=[
-    ["🌱 sleepy trainee",100],
-    ["🥐 pastry helper",250],
-    ["🧁 cupcake artist",450],
-    ["🐱 kitty helper",700],
-    ["🎀 bakery star",1000],
-    ["🌙 sleepy master baker",Infinity]
-  ];
+  let levels=[
+    ['🌱 sleepy trainee',100],
+    ['🥐 pastry helper',250],
+    ['🧁 cupcake artist',450],
+    ['🐱 kitty helper',700],
+    ['🎀 bakery star',1000],
+    ['🌙 sleepy master baker',Infinity]
+  ]
 
-  let level=levels.findIndex(function(level){
-    return xp<level[1];
-  });
+  let level=levels.findIndex(x=>xp<x[1])
 
-  if(level<0)
-    level=levels.length-1;
+  if(level<0) level=levels.length-1
 
-  const previous=
-    level
-      ? levels[level-1][1]
-      : 0;
+  let prev=level?levels[level-1][1]:0
+  let cap=levels[level][1]
 
-  const cap=levels[level][1];
-
-  const percent=
+  let pct=
     cap===Infinity
-      ? 100
-      : Math.min(
-          100,
-          Math.max(
-            0,
-            ((xp-previous)/(cap-previous))*100
-          )
-        );
+      ?100
+      :Math.min(
+        100,
+        Math.max(
+          0,
+          (xp-prev)/(cap-prev)*100
+        )
+      )
 
-  document.getElementById("levelName").textContent=
-    levels[level][0];
+  document.getElementById('levelName').textContent=levels[level][0]
 
-  document.getElementById("xpText").textContent=
+  document.getElementById('xpText').textContent=
     cap===Infinity
-      ? xp+" xp"
-      : xp+" / "+cap+" xp";
+      ?xp+' xp'
+      :xp+' / '+cap+' xp'
 
-  document.getElementById("xpFill").style.width=
-    percent+"%";
+  document.getElementById('xpFill').style.width=pct+'%'
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
-
-  renderAchievements();
-
-  document.getElementById("bakeScore").textContent=
-    "treats baked: "+baked;
-
+  renderAchievements()
 }
-
-
-/* =========================
-   achievements
-========================= */
 
 function renderAchievements(){
 
-  const data=[
+  let data=[
+    ['🥐','first treat',order.length>=1],
+    ['🛍️','first purchase',xp>=30],
+    ['💵','bakery helper',xp>=100],
+    ['⭐','cozy regular',xp>=250],
+    ['🏆','bakery star',xp>=1000]
+  ]
 
-    ["🥐","first treat",order.length>=1],
-
-    ["♡","collector",favorites.length>=5],
-
-    ["🛍️","first purchase",xp>=30],
-
-    ["💵","bakery helper",xp>=100],
-
-    ["🧁","little baker",baked>=10],
-
-    ["⭐","cozy regular",xp>=250],
-
-    ["🎀","bakery star",xp>=1000],
-
-    ["🐱","cat whisperer",baked>=25],
-
-    ["🌙","sleepy master",xp>=2000]
-
-  ];
-
-  document.getElementById("achievements").innerHTML=
-    data.map(function(x){
-
-      return `
-        <div class="achievement ${x[2]?"unlocked":""}">
-          ${x[0]}
-          <b>${x[1]}</b>
-          ${x[2]?"✓":"○"}
-        </div>
-      `;
-
-    }).join("");
-
+  document.getElementById('achievements').innerHTML=
+    data.map(x=>
+      `<div class="achievement ${x[2]?'unlocked':''}">
+        ${x[0]} <b>${x[1]}</b> ${x[2]?'✓':'○'}
+      </div>`
+    ).join('')
 }
-
-
-/* =========================
-   basket
-========================= */
 
 function addItem(name,price){
 
   order.push({
-    name:name,
-    price:parseFloat(
-      String(price).replace("$","")
-    )
-  });
+    name,
+    price:parseFloat(price.slice(1))
+  })
 
-  document.getElementById("count").textContent=
-    order.length;
+  document.getElementById('count').textContent=order.length
 
-  renderOrder();
+  renderOrder()
 
-  document.getElementById("drawer")
-    .classList.add("open");
-
-  addXP(2);
-
-  sparkle();
-
+  document.getElementById('drawer').classList.add('open')
 }
-
 
 function renderOrder(){
 
-  const element=
-    document.getElementById("orderItems");
+  let el=document.getElementById('orderItems')
 
   if(!order.length){
 
-    element.innerHTML=`
-      <p style="color:var(--muted);font:13px Arial">
-        your basket is empty
-      </p>
-    `;
+    el.innerHTML=
+      '<p style="color:var(--muted);font:13px Arial">your basket is empty</p>'
 
-    document.getElementById("total").textContent=
-      "total: $0.00";
+    document.getElementById('total').textContent='total: $0.00'
 
-    return;
+    return
   }
 
-  const grouped={};
+  let grouped={}
 
-  order.forEach(function(item){
+  order.forEach(
+    x=>grouped[x.name]=(grouped[x.name]||0)+1
+  )
 
-    grouped[item.name]=
-      (grouped[item.name]||0)+1;
+  el.innerHTML=
+    Object.entries(grouped).map(([name,qty])=>{
 
-  });
-
-  element.innerHTML=
-    Object.entries(grouped).map(function(entry){
-
-      const name=entry[0];
-      const quantity=entry[1];
-
-      const item=
-        order.find(function(x){
-          return x.name===name;
-        });
+      let item=order.find(x=>x.name===name)
 
       return `
         <div class="orderrow">
-
           <span>
             ${name}
 
@@ -1958,7 +1619,7 @@ function renderOrder(){
               −
             </button>
 
-            ${quantity}
+            ${qty}
 
             <button
               class="clear"
@@ -1966,708 +1627,614 @@ function renderOrder(){
               onclick='addItem(${JSON.stringify(name)},"$${item.price.toFixed(2)}")'>
               +
             </button>
-
           </span>
 
-          <b>
-            $${(item.price*quantity).toFixed(2)}
-          </b>
-
+          <b>$${(item.price*qty).toFixed(2)}</b>
         </div>
-      `;
+      `
+    }).join('')
 
-    }).join("");
-
-  document.getElementById("total").textContent=
-    "total: $"+
-    order.reduce(function(total,item){
-      return total+item.price;
-    },0).toFixed(2);
-
+  document.getElementById('total').textContent=
+    'total: $'+order.reduce((a,b)=>a+b.price,0).toFixed(2)
 }
-
 
 function toggleOrder(){
-
-  document
-    .getElementById("drawer")
-    .classList.toggle("open");
-
-  renderOrder();
-
+  document.getElementById('drawer').classList.toggle('open')
+  renderOrder()
 }
-
 
 function clearOrder(){
 
-  order=[];
+  order=[]
 
-  document.getElementById("count").textContent="0";
+  document.getElementById('count').textContent='0'
 
-  renderOrder();
+  renderOrder()
 
-  showToast("basket cleared ☁️");
-
+  document.getElementById('drawer').classList.add('open')
 }
-
 
 function removeOne(name){
 
-  const index=
-    order.findIndex(function(item){
-      return item.name===name;
-    });
+  let i=order.findIndex(x=>x.name===name)
 
-  if(index>=0)
-    order.splice(index,1);
+  if(i>=0) order.splice(i,1)
 
-  document.getElementById("count").textContent=
-    order.length;
+  document.getElementById('count').textContent=order.length
 
-  renderOrder();
-
+  renderOrder()
 }
-
-
-/* =========================
-   purchase
-========================= */
-
-function purchaseOrder(){
-
-  if(!order.length){
-
-    showToast("your basket is empty ☁️");
-
-    return;
-  }
-
-  const total=
-    order.reduce(function(sum,item){
-      return sum+item.price;
-    },0);
-
-  if(total>balance){
-
-    showToast(
-      "not enough sleepy dollars 💸"
-    );
-
-    return;
-  }
-
-  balance-=total;
-
-  addXP(
-    Math.max(
-      10,
-      Math.floor(total*8)
-    )
-  );
-
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
-
-  showToast(
-    "order placed! fresh treats incoming ☁️"
-  );
-
-  order=[];
-
-  document.getElementById("count").textContent="0";
-
-  renderOrder();
-
-  saveProgress();
-
-}
-
-
-/* =========================
-   daily reward
-========================= */
 
 function dailyReward(){
 
-  const today=
-    new Date().toDateString();
+  let day=new Date().toDateString()
 
-  const last=
-    localStorage.getItem("sleepyDailyReward");
+  if(localStorage.getItem('sleepyReward')===day){
 
-  if(last===today){
+    document.getElementById('gameResult').textContent=
+      "you already claimed today's reward 🌙"
 
-    document.getElementById("gameResult").textContent=
-      "you already claimed today's reward 🌙";
-
-    return;
+    return
   }
 
-  localStorage.setItem(
-    "sleepyDailyReward",
-    today
-  );
+  localStorage.setItem('sleepyReward',day)
 
-  const reward=
-    Math.floor(Math.random()*21)+15;
+  balance+=15
 
-  balance+=reward;
+  addXP(20)
 
-  addXP(20);
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
-
-  document.getElementById("gameResult").textContent=
-    "daily reward claimed! +$"+
-    reward+
-    " sleepy dollars 🎁☁️";
-
-  sparkle();
-  saveProgress();
-
+  document.getElementById('gameResult').textContent=
+    'daily reward claimed! +$15 sleepy dollars 🎁☁️'
 }
 
+function changeSign(){
 
-/* =========================
-   jobs
-========================= */
+  let v=document.getElementById('signInput').value.trim()
+
+  if(v)
+    document.getElementById('signText').textContent=
+      v+' ☁️'
+}
+
+function updateHours(){
+
+  let h=new Date().getHours()
+
+  let open=h>=7&&h<21
+
+  document.getElementById('hours').textContent=
+    open
+      ?'☁️ bakery is open'
+      :'🌙 bakery is closed • come back at 7am'
+}
+
+updateHours()
+
+setInterval(updateHours,60000)
 
 function earnMoney(){
 
-  const tip=
-    Math.floor(Math.random()*16)+5;
+  let tip=Math.floor(Math.random()*16)+5
 
-  balance+=tip;
+  balance+=tip
 
-  addXP(20);
+  addXP(20)
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
 
-  document.getElementById("gameResult").textContent=
-    "customer served! you earned $"+
-    tip+
-    ".00 💵☁️";
-
-  sparkle();
-
-  saveProgress();
-
+  document.getElementById('gameResult').textContent=
+    'customer served! you earned $'+tip+'.00 💵☁️'
 }
-
 
 function doJob(job,min,max){
 
-  const tip=
-    Math.floor(
-      Math.random()*(max-min+1)
-    )+min;
+  let tip=
+    Math.floor(Math.random()*(max-min+1))+min
 
-  balance+=tip;
+  balance+=tip
 
-  addXP(15);
+  addXP(15)
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
 
-  document.getElementById("gameResult").textContent=
-    job+
-    " complete! you earned $"+
-    tip+
-    ".00 💵☁️";
-
-  sparkle();
-
-  saveProgress();
-
+  document.getElementById('gameResult').textContent=
+    job+' complete! you earned $'+tip+'.00 💵☁️'
 }
-
 
 function tipJar(){
 
-  const today=
-    new Date().toDateString();
+  let day=new Date().toDateString()
 
-  if(lastTipDay===today){
+  if(lastTipDay===day){
 
-    document.getElementById("gameResult").textContent=
-      "the tip jar is empty for today 🌙";
+    document.getElementById('gameResult').textContent=
+      'the tip jar is empty for today 🌙'
 
-    return;
+    return
   }
 
-  lastTipDay=today;
+  lastTipDay=day
 
-  const tip=
-    Math.floor(Math.random()*21)+10;
+  let tip=Math.floor(Math.random()*21)+10
 
-  balance+=tip;
+  balance+=tip
 
-  addXP(25);
+  addXP(25)
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
 
-  document.getElementById("gameResult").textContent=
-    "the daily tip jar gave you $"+
-    tip+
-    ".00! 🎰💵";
-
-  sparkle();
-
-  saveProgress();
-
+  document.getElementById('gameResult').textContent=
+    'the daily tip jar gave you $'+tip+'.00! 🎰💵'
 }
-
 
 function petCat(){
 
-  const reward=
-    Math.floor(Math.random()*6)+1;
+  let tip=Math.floor(Math.random()*6)+1
 
-  balance+=reward;
+  balance+=tip
 
-  addXP(5);
+  addXP(5)
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
 
-  document.getElementById("gameResult").textContent=
-    "the bakery cat purred and gave you $"+
-    reward+
-    ".00 🐱☁️";
-
-  sparkle();
-
-  saveProgress();
-
+  document.getElementById('gameResult').textContent=
+    'the bakery cat purred and gave you $'+tip+'.00 🐱☁️'
 }
 
+function newSpecial(){
 
-/* =========================
-   interactive sleepy cat
-========================= */
+  let x=items[Math.floor(Math.random()*items.length)]
 
-const catMessages=[
+  document.getElementById('specialText').textContent=
+    x[2]+' • '+x[3]
 
-  "sleepy is currently thinking about croissants... 🥐",
-
-  "sleepy blinked at you. that means you're friends now. 🐱",
-
-  "sleepy wants a tiny cat cupcake. immediately. 🧁",
-
-  "sleepy is taking a bakery nap... zzz 🌙",
-
-  "sleepy says you're doing great, baker ☁️",
-
-  "sleepy found a crumb and considers it treasure ✨",
-
-  "sleepy has entered maximum fluff mode. 🐱"
-
-];
-
-
-function petSleepy(){
-
-  const message=
-    catMessages[
-      Math.floor(
-        Math.random()*catMessages.length
-      )
-    ];
-
-  const box=
-    document.getElementById("catMessage");
-
-  box.textContent=message;
-
-  box.classList.add("show");
-
-  addXP(2);
-
-  sparkle();
-
-  setTimeout(function(){
-    box.classList.remove("show");
-  },3000);
-
+  document.getElementById('specialPrice').textContent=
+    "today's special • "+x[4]
 }
-
-
-/* =========================
-   baking mini game
-========================= */
-
-function bakeTreat(){
-
-  baked++;
-
-  const rewards=[
-    "a perfect little cupcake 🧁",
-    "a golden croissant 🥐",
-    "a sleepy cookie 🍪",
-    "a strawberry pastry 🍓",
-    "a dreamy donut 🍩",
-    "a tiny matcha treat 🍵"
-  ];
-
-  const treat=
-    rewards[
-      Math.floor(
-        Math.random()*rewards.length
-      )
-    ];
-
-  const xpReward=
-    Math.floor(Math.random()*8)+5;
-
-  addXP(xpReward);
-
-  document.getElementById("bakeResult").textContent=
-    "you baked "+treat+
-    " +"+xpReward+" xp ✨";
-
-  sparkle();
-
-  if(baked%10===0){
-
-    const bonus=
-      Math.floor(Math.random()*11)+5;
-
-    balance+=bonus;
-
-    document.getElementById("bakeResult").textContent+=
-      " baking streak bonus! +$"+
-      bonus+
-      " 💵";
-
-  }
-
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
-
-  updateGame();
-
-  saveProgress();
-
-}
-
-
-/* =========================
-   upgrades
-========================= */
 
 function buyUpgrade(key,cost){
 
   if(upgrades[key]){
 
-    document.getElementById("upgradeResult").textContent=
-      "you already bought that upgrade 🌷";
+    document.getElementById('upgradeResult').textContent=
+      'you already bought that upgrade 🌷'
 
-    return;
+    return
   }
 
   if(balance<cost){
 
-    document.getElementById("upgradeResult").textContent=
-      "not enough sleepy dollars yet 💸";
+    document.getElementById('upgradeResult').textContent=
+      'not enough sleepy dollars yet 💸'
 
-    return;
+    return
   }
 
-  balance-=cost;
+  balance-=cost
 
-  upgrades[key]=true;
+  upgrades[key]=true
 
-  addXP(
-    Math.floor(cost/2)
-  );
+  addXP(Math.floor(cost/2))
 
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
 
-  document.getElementById("upgradeResult").textContent=
-    "upgrade unlocked! the bakery feels cozier ☁️";
-
-  sparkle();
-  saveProgress();
-
+  document.getElementById('upgradeResult').textContent=
+    'upgrade unlocked! the bakery feels cozier ☁️'
 }
 
+function purchaseOrder(){
 
-/* =========================
-   daily special
-========================= */
+  if(!order.length){
 
-function newSpecial(){
+    alert('your basket is empty! add a sleepy treat first ☁️')
 
-  const item=
-    items[
-      Math.floor(
-        Math.random()*items.length
-      )
-    ];
+    return
+  }
 
-  document.getElementById("specialText").textContent=
-    item[2]+" • "+item[3];
+  let total=order.reduce((a,b)=>a+b.price,0)
 
-  document.getElementById("specialPrice").textContent=
-    "today's special • "+item[4];
+  if(total>balance){
 
+    alert(
+      'not enough sleepy dollars! you have $'+
+      balance.toFixed(2)+' 💸'
+    )
+
+    return
+  }
+
+  balance-=total
+
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
+
+  addXP(30)
+
+  alert(
+    'order placed! your sleepy treats are coming right up ☁️\n\n'+
+    'total: $'+total.toFixed(2)+
+    '\n\nbalance left: $'+
+    balance.toFixed(2)
+  )
+
+  clearOrder()
 }
-
-
-/* =========================
-   secret codes
-========================= */
 
 function redeem(){
 
-  const input=
-    document.getElementById("code");
+  let code=
+    document.getElementById('code')
+      .value
+      .trim()
+      .toUpperCase()
 
-  const code=
-    input.value.trim().toUpperCase();
-
-  const rewards={
-
-    SLEEPY:{
-      text:"a free vanilla cloud cookie ☁️",
-      money:5,
-      xp:10
-    },
-
-    KITTY:{
-      text:"a free kitty cookie 🐱",
-      money:8,
-      xp:15
-    },
-
-    SWEETDREAMS:{
-      text:"a free sleepy cat cupcake 🌙",
-      money:10,
-      xp:20
-    },
-
-    STRAWBERRY:{
-      text:"a free strawberry milk 🍓",
-      money:7,
-      xp:12
-    },
-
-    MATCHA:{
-      text:"a free matcha cream puff 🍵",
-      money:7,
-      xp:12
-    },
-
-    GOODNIGHT:{
-      text:"a free chocolate chip cookie 🍪",
-      money:6,
-      xp:10
-    },
-
-    PAJAMAS:{
-      text:"a free mini donut 🎀",
-      money:9,
-      xp:15
-    },
-
-    DREAMY:{
-      text:"a free raspberry rose danish 🌹",
-      money:12,
-      xp:20
-    },
-
-    BAKERY:{
-      text:"a sleepy bakery bonus ☁️",
-      money:20,
-      xp:25
-    },
-
-    CLOUD:{
-      text:"a cloud latte ☁️",
-      money:15,
-      xp:20
-    },
-
-    STARLIGHT:{
-      text:"a starlight bakery bonus ✨",
-      money:25,
-      xp:30
-    },
-
-    67:{
-      text:"a random free item 💀",
-      money:6,
-      xp:7
-    }
-
-  };
-
-  if(!rewards[code]){
-
-    document.getElementById("message").textContent=
-      "hmm... that code is not on the sleepy list 👀";
-
-    return;
+  let rewards={
+    SLEEPY:'a free vanilla cloud cookie ☁️',
+    KITTY:'a free kitty cookie 🐱',
+    SWEETDREAMS:'a free sleepy cat cupcake 🌙',
+    STRAWBERRY:'a free strawberry milk 🍓',
+    MATCHA:'a free matcha cream puff 🍵',
+    GOODNIGHT:'a free chocolate chip cookie 🍪',
+    PAJAMAS:'a free mini donut 🎀',
+    DREAMY:'a free raspberry rose danish 🌹',
+    67:'a random free item 💀'
   }
 
-  if(claimedCodes.includes(code)){
-
-    document.getElementById("message").textContent=
-      "you already used that code! 🌷";
-
-    return;
-  }
-
-  const reward=rewards[code];
-
-  claimedCodes.push(code);
-
-  balance+=reward.money;
-
-  addXP(reward.xp);
-
-  document.getElementById("balance").textContent=
-    balance.toFixed(2);
-
-  document.getElementById("message").textContent=
-    "code accepted! you unlocked "+
-    reward.text+
-    " +$"+
-    reward.money+
-    " 💗";
-
-  input.value="";
-
-  sparkle();
-
-  saveProgress();
-
+  document.getElementById('message').textContent=
+    rewards[code]
+      ?`code accepted! you unlocked ${rewards[code]}`
+      :'hmm... that code is not on the sleepy list 👀'
 }
 
 
-/* =========================
-   custom sign
-========================= */
+/* =========================================================
+   sleepy's bakery corner
+   ========================================================= */
 
-function changeSign(){
+const cornerCustomers=[
 
-  const input=
-    document.getElementById("signInput");
+  {
+    name:'mimi',
+    face:'🐱',
+    order:'strawberry croissant',
+    description:'a warm croissant with strawberry cream and powdered sugar',
+    steps:['bake croissant','strawberry cream','powdered sugar']
+  },
 
-  const value=
-    input.value.trim();
+  {
+    name:'luna',
+    face:'🐰',
+    order:'matcha cream puff',
+    description:'a fluffy cream puff filled with matcha cream and powdered sugar',
+    steps:['bake cream puff','matcha cream','powdered sugar']
+  },
 
-  if(!value){
+  {
+    name:'mochi',
+    face:'🐻',
+    order:'chocolate cupcake',
+    description:'a soft chocolate cupcake with chocolate frosting and sprinkles',
+    steps:['bake cupcake','chocolate frosting','sprinkles']
+  },
 
-    showToast("write something first 🎀");
+  {
+    name:'pipi',
+    face:'🐹',
+    order:'blueberry danish',
+    description:'a flaky danish with blueberry filling and powdered sugar',
+    steps:['bake danish','blueberry filling','powdered sugar']
+  },
 
-    return;
+  {
+    name:'biscuit',
+    face:'🐶',
+    order:'honey cinnamon latte',
+    description:'a warm latte with honey and a sprinkle of cinnamon',
+    steps:['make latte','honey','cinnamon']
+  },
+
+  {
+    name:'foxie',
+    face:'🦊',
+    order:'iced matcha latte',
+    description:'a chilled matcha latte with matcha and oat milk',
+    steps:['make drink','matcha','oat milk']
+  },
+
+  {
+    name:'berry',
+    face:'🐻‍❄️',
+    order:'strawberry pancakes',
+    description:'fluffy pancakes topped with strawberry cream and powdered sugar',
+    steps:['make pancakes','strawberry cream','powdered sugar']
+  },
+
+  {
+    name:'tofu',
+    face:'🐼',
+    order:'vanilla waffles',
+    description:'crispy waffles finished with powdered sugar',
+    steps:['make waffles','powdered sugar']
+  },
+
+  {
+    name:'coco',
+    face:'🐨',
+    order:'chocolate cupcake',
+    description:'a fluffy cupcake with chocolate frosting and sprinkles',
+    steps:['bake cupcake','chocolate frosting','sprinkles']
+  },
+
+  {
+    name:'momo',
+    face:'🐰',
+    order:'honey cinnamon latte',
+    description:'a sleepy warm latte with honey and cinnamon',
+    steps:['make latte','honey','cinnamon']
   }
 
-  document.getElementById("signText").textContent=
-    value+" ☁️";
+]
 
-  input.value="";
+let cornerCustomer=null
+let cornerOrder=[]
+let cornerPatience=100
+let cornerTimer=null
+let cornerCombo=0
+let cornerServed=0
+let cornerPerfect=0
+let cornerRunning=false
 
-  addXP(5);
+function startBakeryCorner(){
 
-  saveProgress();
+  document.getElementById('bakeryCorner').classList.add('active')
 
-  showToast("bakery sign updated 🎀");
+  cornerRunning=true
 
+  cornerCombo=0
+  cornerServed=0
+  cornerPerfect=0
+
+  newCornerCustomer()
+
+  document.getElementById('cornerResult').textContent=
+    'welcome to sleepy’s bakery corner! let’s bakeee 🥐☕'
 }
 
+function newCornerCustomer(){
 
-/* =========================
-   bakery hours
-========================= */
+  if(!cornerRunning) return
 
-function updateHours(){
-
-  const hour=
-    new Date().getHours();
-
-  const open=
-    hour>=7 && hour<21;
-
-  document.getElementById("hours").textContent=
-    open
-      ? "☁️ bakery is open"
-      : "🌙 bakery is closed • come back at 7am";
-
-}
-
-updateHours();
-
-setInterval(
-  updateHours,
-  60000
-);
-
-
-/* =========================
-   keyboard shortcuts
-========================= */
-
-document.addEventListener(
-  "keydown",
-  function(event){
-
-    if(event.key==="/"){
-
-      const code=
-        document.getElementById("code");
-
-      if(document.activeElement!==code){
-
-        event.preventDefault();
-
-        code.focus();
-
-      }
-
-    }
-
-    if(event.key==="Escape"){
-
-      document
-        .getElementById("drawer")
-        .classList.remove("open");
-
-    }
-
+  if(cornerTimer){
+    clearInterval(cornerTimer)
   }
-);
 
+  cornerCustomer=
+    cornerCustomers[
+      Math.floor(Math.random()*cornerCustomers.length)
+    ]
 
-/* =========================
-   autosave
-========================= */
+  cornerOrder=[]
 
-setInterval(
-  saveProgress,
-  10000
-);
+  cornerPatience=100
 
+  document.getElementById('cornerFace').textContent=
+    cornerCustomer.face
 
-/* =========================
-   startup
-========================= */
+  document.getElementById('cornerCustomerName').textContent=
+    cornerCustomer.name
 
-loadProgress();
+  document.getElementById('cornerOrderName').textContent=
+    cornerCustomer.order
 
-document.getElementById("balance").textContent=
-  balance.toFixed(2);
+  document.getElementById('cornerOrderDescription').textContent=
+    cornerCustomer.description
 
-render();
+  document.getElementById('cornerRecipe').textContent=
+    'choose the correct steps for the order above'
 
-newSpecial();
+  document.getElementById('cornerServeButton').disabled=true
 
-updateGame();
+  document.querySelectorAll('.station').forEach(
+    button=>button.classList.remove('selected')
+  )
+
+  updateCornerPatience()
+
+  cornerTimer=setInterval(()=>{
+
+    cornerPatience-=2
+
+    if(cornerPatience<=0){
+
+      cornerPatience=0
+
+      updateCornerPatience()
+
+      clearInterval(cornerTimer)
+
+      cornerTimeout()
+
+      return
+    }
+
+    updateCornerPatience()
+
+  },700)
+}
+
+function updateCornerPatience(){
+
+  let fill=document.getElementById('cornerPatienceFill')
+
+  fill.style.width=cornerPatience+'%'
+
+  document.getElementById('cornerPatienceText').textContent=
+    cornerPatience+'%'
+
+  if(cornerPatience>60){
+    fill.style.opacity='1'
+  }else if(cornerPatience>30){
+    fill.style.opacity='.75'
+  }else{
+    fill.style.opacity='.45'
+  }
+}
+
+function chooseCorner(value){
+
+  if(!cornerRunning || !cornerCustomer)
+    return
+
+  if(cornerOrder.includes(value))
+    return
+
+  cornerOrder.push(value)
+
+  let buttons=document.querySelectorAll('.station')
+
+  buttons.forEach(button=>{
+
+    if(
+      button.getAttribute('onclick')===
+      `chooseCorner('${value}')`
+    ){
+      button.classList.add('selected')
+    }
+
+  })
+
+  document.getElementById('cornerRecipe').textContent=
+    cornerOrder.map(
+      (step,index)=>
+        (index+1)+'. '+step
+    ).join(' • ')
+
+  let needed=cornerCustomer.steps
+
+  let correct=
+    cornerOrder.length===needed.length &&
+    cornerOrder.every(
+      (step,index)=>step===needed[index]
+    )
+
+  document.getElementById('cornerServeButton').disabled=
+    !correct
+}
+
+function serveCorner(){
+
+  if(!cornerCustomer || !cornerRunning)
+    return
+
+  let needed=cornerCustomer.steps
+
+  let perfect=
+    cornerOrder.length===needed.length &&
+    cornerOrder.every(
+      (step,index)=>step===needed[index]
+    )
+
+  if(!perfect){
+
+    document.getElementById('cornerResult').textContent=
+      'hmm... something is missing from the recipe 👀'
+
+    return
+  }
+
+  clearInterval(cornerTimer)
+
+  cornerServed++
+
+  cornerPerfect++
+
+  cornerCombo++
+
+  let bonus=
+    Math.floor(cornerPatience/20)
+
+  let reward=
+    12+bonus
+
+  balance+=reward
+
+  addXP(30)
+
+  document.getElementById('balance').textContent=
+    balance.toFixed(2)
+
+  document.getElementById('cornerCombo').textContent=
+    cornerCombo
+
+  document.getElementById('cornerServed').textContent=
+    cornerServed
+
+  document.getElementById('cornerPerfect').textContent=
+    cornerPerfect
+
+  document.getElementById('cornerResult').textContent=
+    'perfect order! '+cornerCustomer.name+
+    ' loved it! +$'+reward+
+    ' 💵⭐ combo x'+cornerCombo
+
+  addCornerHistory(
+    '⭐ perfect: '+cornerCustomer.order+
+    ' • +$'+reward+
+    ' • combo x'+cornerCombo
+  )
+
+  setTimeout(()=>{
+    newCornerCustomer()
+  },1000)
+}
+
+function cornerTimeout(){
+
+  cornerCombo=0
+
+  document.getElementById('cornerCombo').textContent=
+    '0'
+
+  document.getElementById('cornerResult').textContent=
+    'the customer got sleepy and left... 🌙 your combo reset!'
+
+  addCornerHistory(
+    '🌙 missed: '+cornerCustomer.order
+  )
+
+  setTimeout(()=>{
+    newCornerCustomer()
+  },1000)
+}
+
+function addCornerHistory(text){
+
+  let history=document.getElementById('cornerHistory')
+
+  let item=document.createElement('div')
+
+  item.className='history-item'
+
+  item.textContent=text
+
+  history.prepend(item)
+
+  while(history.children.length>5){
+    history.removeChild(history.lastChild)
+  }
+}
+
+render()
+newSpecial()
+updateGame()
 
 </script>
 
